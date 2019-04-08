@@ -1,0 +1,57 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  border: 1px solid #005582;
+  border-radius: .5em;
+  background-color: white;
+  color: #005582;
+  width: 200px;
+  font-size: .7em;
+  margin: .2em;
+  padding: .5em;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  display: inline-block;
+  background-color: #005582;
+  color: #fff;
+  width: 30px;
+  font-size: .7em;
+  text-transform: capitalize;
+  text-align: center;
+  border: 1px solid ##005582;
+  border-radius: .5em;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.inputText {
+  border: none;
+  border-bottom: 1px solid #005582;
+  font-size: .7em;
+  padding: 0;
+  margin: .1em;
+}
+
+.inputText:focus, .inputText:focus{
+    outline: 0;
+}

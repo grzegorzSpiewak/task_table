@@ -1,0 +1,50 @@
+.wrap {
+  width: 100;
+  margin: 1em;
+  border-top: 1px solid #005582;
+  padding-top: 1em;
+}
+
+.button {
+  display: inline-block;
+  background-color: #005582;
+  color: #fff;
+  margin: .5em;
+  padding: .5em;
+  font-size: 1em;
+  text-transform: capitalize;
+  text-align: center;
+  border: 1px solid ##005582;
+  border-radius: .5em;
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+}
+
+.inactiveButton {
+  composes: button;
+  opacity: .6;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.inputText {
+  border: none;
+  border-bottom: 1px solid #005582;
+  font-size: .7em;
+  padding: 0;
+  margin: 0;
+}
+
+.inputText:focus, .inputText:focus{
+    outline: 0;
+}

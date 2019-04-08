@@ -1,0 +1,12 @@
+.page {
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2;
+  line-height: 1em;
+  color: #260031;
+  font-family: 'Work Sans', sans-serif;
+}

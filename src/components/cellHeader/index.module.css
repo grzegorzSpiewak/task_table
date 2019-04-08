@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.cell {
+  border: 1px solid #005582;
+  border-radius: .5em;
+  background-color: #005582;
+  color: white;
+  width: 200px;
+  font-size: .7em;
+  margin: .2em;
+  padding: .5em;
+  text-transform: capitalize;
+}
