@@ -10,17 +10,14 @@ const rows = [
   {
     id: '1',
     row: { name: 'Clark', surname: 'Kent', email: 'superman@email.com' },
-    filled: true,
   },
   {
     id: '2',
     row: { name: 'Bruce', surname: 'Wayne', email: 'batman@email.com' },
-    filled: true,
   },
   {
     id: '3',
     row: { name: 'Tony', surname: 'Stark', email: 'ironmane@email.com' },
-    filled: true,
   },
 ]
 
@@ -38,7 +35,6 @@ function tableReducer(state = INITIAL_STATE, action) {
     const newRow = {
       id: `${state.rows.length + 5}` || 99,
       row: rowData,
-      filled: false
     };
 
     return {
@@ -48,12 +44,12 @@ function tableReducer(state = INITIAL_STATE, action) {
   case TABLE_REMOVE_ROW:
     return {
       ...state,
-      rows: [...state.rows.filter(item => item.id !== action.id)]
+      rows: [...state.rows.filter(item => item.id.toString() !== action.id.toString())]
     }
   case TABLE_EDIT_CELL_IN_ROW:
     const splitId = action.id.split('_')
     const id = splitId[0]
-    const prop = splitId[1]
+    const prop = splitId[1].toLowerCase()
 
     return {
       ...state,
@@ -82,7 +78,6 @@ function tableReducer(state = INITIAL_STATE, action) {
       rows: state.rows.map(x => ({
         id: x.id,
         row: {...x.row, ...action.column },
-        filled: x.filled
       }))
     }
   default:
