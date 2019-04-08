@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as tableActions from '../../reducers/table/actions'
@@ -8,6 +9,20 @@ import styles from './index.module.css';
 
 // Object.keys(row).map(r => <h1 key={id + r}>{row[r] || 'placeholder'}</h1>)
 class Cell  extends React.Component {
+  static propTypes = {
+    value: PropTypes.string,
+    columnName:  PropTypes.string,
+    rowId:  PropTypes.string,
+    id:  PropTypes.string.isRequired,
+    tableActions: PropTypes.shape({
+      editTableRow: PropTypes.func.isRequired,
+      editRowCell: PropTypes.func.isRequired,
+    }).isRequired,
+    table: PropTypes.shape({
+      rows: PropTypes.array.isRequired
+    }).isRequired
+  }
+
   state = {
     value: '',
     columnName: '',
@@ -34,10 +49,6 @@ class Cell  extends React.Component {
     const editedCell = e.target.name
     const { editTableRow } = this.props.tableActions;
     editTableRow(editedCell);
-  }
-
-  test(e) {
-    console.log(e.target.data)
   }
 
   render() {
