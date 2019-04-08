@@ -1,11 +1,9 @@
-// @flow
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as tableActions from '../../reducers/table/actions'
-import styles from './index.module.css';
+import styles from './index.module.css'
 
 // Object.keys(row).map(r => <h1 key={id + r}>{row[r] || 'placeholder'}</h1>)
 class Cell  extends React.Component {
@@ -47,14 +45,14 @@ class Cell  extends React.Component {
 
   editRow(e) {
     const editedCell = e.target.name
-    const { editTableRow } = this.props.tableActions;
-    editTableRow(editedCell);
+    const { editTableRow } = this.props.tableActions
+    editTableRow(editedCell)
   }
 
   render() {
-    const { id, table } = this.props;
+    const { id, table } = this.props
     const row = table.rows.find(row => row.id === id).row
-    const keys = Object.keys(row);
+    const keys = Object.keys(row)
 
     return (
       <div

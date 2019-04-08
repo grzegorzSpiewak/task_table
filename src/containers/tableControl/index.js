@@ -1,12 +1,10 @@
-// @flow
-
 import React from 'react'
 import PropTypes from 'prop-types'
-import { CSVLink } from "react-csv";
+import { CSVLink } from "react-csv"
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as tableActions from '../../reducers/table/actions'
-import styles from './index.module.css';
+import styles from './index.module.css'
 
 class TableControl extends React.Component {
   static propTypes = {
@@ -31,7 +29,7 @@ class TableControl extends React.Component {
   }
 
   onSubmit(e) {
-    const { addTableColumn } = this.props.tableActions;
+    const { addTableColumn } = this.props.tableActions
     const newColumn = {
       [this.state.columnName]: '',
     }
@@ -40,12 +38,12 @@ class TableControl extends React.Component {
     this.setState({
       columnName: '',
     })
-    e.preventDefault();
+    e.preventDefault()
   }
 
   addRow() {
-    const { addTableRow } = this.props.tableActions;
-    addTableRow();
+    const { addTableRow } = this.props.tableActions
+    addTableRow()
   }
 
   render() {

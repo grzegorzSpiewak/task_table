@@ -28,14 +28,14 @@ const INITIAL_STATE = {
 function tableReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
   case TABLE_ADD_ROW:
-    const keyValues = state.rows.length === 0 ? ['name', 'surname', 'email'] : Object.keys(state.rows[0].row);
+    const keyValues = state.rows.length === 0 ? ['name', 'surname', 'email'] : Object.keys(state.rows[0].row)
     const rowData = {}
     keyValues.map(val => rowData[val] = '')
 
     const newRow = {
       id: `${state.rows.length + 5}` || 99,
       row: rowData,
-    };
+    }
 
     return {
       ...state,
