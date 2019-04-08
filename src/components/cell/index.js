@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux'
 import * as tableActions from '../../reducers/table/actions'
 import styles from './index.module.css'
 
-// Object.keys(row).map(r => <h1 key={id + r}>{row[r] || 'placeholder'}</h1>)
 class Cell  extends React.Component {
   static propTypes = {
     value: PropTypes.string,
