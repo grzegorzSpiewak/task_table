@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './index.module.css';
+import PropTypes from 'prop-types'
+import styles from './index.module.css'
 
 const CellHeader = ({ names }) => {
   return (
@@ -18,6 +19,10 @@ const CellHeader = ({ names }) => {
       }
     </div>
   )
+}
+
+CellHeader.propTypes = {
+  names: PropTypes.array.isRequired
 }
 
 export default CellHeader

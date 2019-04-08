@@ -15,11 +15,11 @@ class Cell  extends React.Component {
     rowId:  PropTypes.string,
     id:  PropTypes.string.isRequired,
     tableActions: PropTypes.shape({
-      editTableRow: PropTypes.func.isRequired,
-      editRowCell: PropTypes.func.isRequired,
+      editTableRow: PropTypes.func,
+      editRowCell: PropTypes.func,
     }).isRequired,
     table: PropTypes.shape({
-      rows: PropTypes.array.isRequired
+      rows: PropTypes.array
     }).isRequired
   }
 

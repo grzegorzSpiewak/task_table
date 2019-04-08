@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { CSVLink } from "react-csv";
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -8,6 +9,17 @@ import * as tableActions from '../../reducers/table/actions'
 import styles from './index.module.css';
 
 class TableControl extends React.Component {
+  static propTypes = {
+    columnName:  PropTypes.string,
+    tableActions: PropTypes.shape({
+      addTableColumn: PropTypes.func,
+      addTableRow: PropTypes.func,
+    }).isRequired,
+    table: PropTypes.shape({
+      rows: PropTypes.array
+    }).isRequired
+  }
+
   state = {
     columnName: '',
   }
